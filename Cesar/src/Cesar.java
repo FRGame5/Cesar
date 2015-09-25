@@ -4,6 +4,7 @@ import java.util.Arrays;
 public class Cesar {
 	private int msg[];
 	private int msgCode[];
+	private int freq[];
 	private Character cle;
 	private Alphabet a;
 	
@@ -26,10 +27,9 @@ public class Cesar {
 	{
 		for(int i=0; i<msg.length;i++)
 		{
-			msgCode[i] = msg[i]+a.position(cle);
+			msgCode[i] = (msg[i]+a.position(cle))%27;
 		}
 	}
-	
 	
 	public String getMsg()
 	{
@@ -49,9 +49,21 @@ public class Cesar {
 		return retour;
 	}
 	
+	public int[] getFrequenceLettre()
+	{
+		int retour[] = new int[27];
+		for(int i=0;i<msg.length;i++)
+		{
+			retour[msg[i]]+=1;
+		}
+		this.freq = retour;
+		return retour;
+	}
+	
 	@Override
 	public String toString() {
-		return "Cesar [msg=" + Arrays.toString(msg) + ", msgCode=" + Arrays.toString(msgCode) + ", cle=" + cle + "]";
+		return "Cesar [msg=" + Arrays.toString(msg) + ", msgCode=" + Arrays.toString(msgCode) + ", freq="
+				+ Arrays.toString(freq) + ", cle=" + cle + "]";
 	}
 	
 	
