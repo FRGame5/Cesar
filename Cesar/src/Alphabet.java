@@ -5,16 +5,20 @@ public class Alphabet {
 	public Alphabet(){
 	}
 	
-	public int position(char c){
-		int retour = 0;
+	public int position(Character c){
 		for(int i=0;i<this.alphabet.length;i++)
 		{
 			if(c==this.alphabet[i])
 			{
-				retour = i;
+				return i;
 			}
 		}
-		return retour;
+		return 0;
+	}
+	
+	public Character lettreCorrespondante(int c)
+	{
+		return alphabet[c%26];
 	}
 
 }
