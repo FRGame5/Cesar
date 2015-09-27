@@ -7,8 +7,8 @@ public class Main {
 		System.out.println(c.toString());
 		c.getFrequenceLettre();
 		System.out.println(c.toString());
-		System.out.println(c.getMsgCode());
-		System.out.println(c.getMsg());
+		System.out.println(c.getSortie());
+		System.out.println(c.getEntree());
 	}
 
 }

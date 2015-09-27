@@ -33,7 +33,7 @@ public class Cesar {
 		return retour;
 	}
 
-	public String getsortie() {
+	public String getSortie() {
 		String retour = new String("");
 		for (int i = 0; i < sortie.length; i++) {
 			retour = retour.concat(a.lettreCorrespondante(sortie[i]).toString());
