@@ -22,6 +22,18 @@ public class Cesar {
 	public void coder() {
 		for (int i = 0; i < entree.length; i++) {
 			sortie[i] = (entree[i] + a.position(cle)) % 27;
+			if (sortie[i] == 0)
+				sortie[i]++;
+		}
+	}
+
+	public void deCoder() {
+		for (int i = 0; i < entree.length; i++) {
+			sortie[i] = (entree[i] - a.position(cle));
+			if (sortie[i] < 1)
+				sortie[i] += 26;
+			if (entree[i] == 0)
+				sortie[i] = 0;
 		}
 	}
 
@@ -50,10 +62,26 @@ public class Cesar {
 		return retour;
 	}
 
+	public char trouverClee() {
+		int max = 0;
+		int lettre = 0;
+		for(int i = 1; i<freq.length;i++)
+		{
+			if(max<freq[i])
+			{
+				lettre = i;
+				max = freq[i];
+			}
+			
+		}
+		return a.lettreCorrespondante(lettre-5); // lettre E
+	}
+
 	@Override
 	public String toString() {
-		return "Cesar [entree=" + Arrays.toString(entree) + ", sortie=" + Arrays.toString(sortie) + ", freq="
-				+ Arrays.toString(freq) + ", cle=" + cle + "]";
+		return "Cesar [entree=" + Arrays.toString(entree) + ", sortie="
+				+ Arrays.toString(sortie) + ", freq=" + Arrays.toString(freq)
+				+ ", cle=" + cle + "]";
 	}
 
 }
