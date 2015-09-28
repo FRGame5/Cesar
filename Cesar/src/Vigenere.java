@@ -1,18 +1,19 @@
 import java.util.Arrays;
 
-public class Cesar {
+
+public class Vigenere {
 	private int entree[];
 	private int sortie[];
 	private int freq[];
-	private Character cle;
+	private String cle;
 	private Alphabet a;
 
-	public Cesar(String entree, char cle) {
+	public Vigenere(String entree, String cle) {
 		a = new Alphabet();
 		this.entree = new int[entree.length()];
 		this.sortie = new int[entree.length()];
 		this.freq = new int[27];
-		this.cle = cle;
+		this.cle = cle.toUpperCase();
 		entree = entree.toUpperCase();
 		for (int i = 0; i < entree.length(); i++) {
 			this.entree[i] = a.position(entree.charAt(i));
@@ -21,20 +22,20 @@ public class Cesar {
 	}
 
 	public void coder() {
-		for (int i = 0; i < entree.length; i++) {
-			sortie[i] = (entree[i] + a.position(cle)) % 27;
-			if (sortie[i] == 0)
-				sortie[i]++;
+		for (int i = 0; i < this.entree.length; i++) {
+			this.sortie[i] = (this.entree[i] + a.position(cle.charAt(i%this.cle.length()))) % 27;
+			if (this.sortie[i] == 0)
+				this.sortie[i]++;
 		}
 	}
 
 	public void deCoder() {
-		for (int i = 0; i < entree.length; i++) {
-			sortie[i] = (entree[i] - a.position(cle));
-			if (sortie[i] < 1)
-				sortie[i] += 26;
-			if (entree[i] == 0)
-				sortie[i] = 0;
+		for (int i = 0; i < this.entree.length; i++) {
+			this.sortie[i] = (this.entree[i] - a.position(this.cle.charAt(i%this.cle.length())));
+			if (this.sortie[i] < 1)
+				this.sortie[i] += 26;
+			if (this.entree[i] == 0)
+				this.sortie[i] = 0;
 		}
 	}
 
