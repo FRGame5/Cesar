@@ -8,22 +8,12 @@ public class Cesar {
 	}
 
 	public char decaler(char entree, int decalage) {
-		/*if (this.a.position(entree) == 0)
+		if(entree == ' ')
 			return ' ';
 		if (decalage <= 0) {
-			if (this.a.lettreCorrespondante(-decalage) == entree)
-				return 'Z';
-			return this.a
-					.lettreCorrespondante((this.a.position(entree) + 26 + decalage) % 26);
-		} else {
-			if(this.a.lettreCorrespondante(decalage+a.position(entree)) == ' ')
-				return 'Z';
-			return this.a.lettreCorrespondante((this.a.position(entree) + decalage) % 26);
-		}*/
-		if (decalage <= 0) {
-			return(a.lettreCorrespondante((a.position(entree) + 27 - Math.abs(decalage))%27));			
+			return(a.lettreCorrespondante((a.position(entree) + 26 - Math.abs(decalage))%26));			
 		}else{
-			return(a.lettreCorrespondante((a.position(entree) + Math.abs(decalage))%27));			
+			return(a.lettreCorrespondante((a.position(entree) + Math.abs(decalage))%26));			
 		}
 	}
 
@@ -31,8 +21,7 @@ public class Cesar {
 		String sortie = new String();
 		entree = entree.toUpperCase();
 		for (int i = 0; i < entree.length(); i++) {
-			sortie = sortie.concat(Character.toString(this.decaler(
-					entree.charAt(i), this.a.position(cle))));
+			sortie = sortie.concat(Character.toString(this.decaler(entree.charAt(i), a.position(cle))));
 		}
 		return sortie;
 	}
@@ -56,10 +45,10 @@ public class Cesar {
 	}
 
 	public char trouverClee(String entree) {
-		float freqFr[] = { 0F, 7.68F, 0.8F, 3.32F, 3.6F, 17.76F, 1.06F, 1.1F,
+		float freqFr[] = {7.68F, 0.8F, 3.32F, 3.6F, 17.76F, 1.06F, 1.1F,
 				0.64F, 7.63F, 0.19F, 0F, 5.89F, 2.72F, 7.61F, 5.34F, 3.24F,
 				1.34F, 6.81F, 8.23F, 7.3F, 6.05F, 1.27F, 0F, 0.54F, 0.21F,
-				0.07F };
+				0.07F , 0F};
 		int freqMot[] = this.frequence(entree);
 		float probat[] = new float[27];
 		int retour = 0;
