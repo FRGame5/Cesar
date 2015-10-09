@@ -55,7 +55,7 @@ public class Cesar {
 		float freqRetour = 0F;
 		for (int i = 0; i < probat.length; i++) {
 			for (int j = 0; j < probat.length; j++) {
-				probat[i] += freqFr[j] * freqMot[(j + i) % 27];
+				probat[i] += freqFr[j] * freqMot[(j + i)%27];
 			}
 		}
 		for (int i = 0; i < probat.length; i++) {
