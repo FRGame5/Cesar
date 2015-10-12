@@ -70,11 +70,12 @@ public class Vigenere {
     	//initialisation des tableaux
     	String retour[] = new String[25];
     	String clee[] = new String[25];
+    	float indiceSimilaire = 0F;
     	for (int i = 0; i < retour.length ; i++) {
 			retour[i] = new String();
 			clee[i] = new String();
 		}
-    	//chaque case du tableau recoit comme si la longueur de la clee etait de longueur i+2
+    	//chaque case du tableau recoit comme si la longueur de la clee etait de longueur i+1
     	for (int i = 0; i < retour.length; i++) {
 			clee[i] = this.trouverCle(entree, i+1);
 			retour[i] = this.deCoder(entree, clee[i]);
@@ -87,6 +88,13 @@ public class Vigenere {
 				
 				return retour[i];
 			}
+		}
+    	indiceSimilaire = this.indiceCoincidence(retour[0]);
+    	for (int i = 0; i < retour.length; i++) {
+			if(this.indiceCoincidence(retour[i]) != indiceSimilaire){
+				return "Clée non trouvée... Sa longueur est de " + (i+1);
+			}
+			
 		}
     	return "Non trouvé";
     }
