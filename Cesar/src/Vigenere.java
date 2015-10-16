@@ -17,6 +17,7 @@ public class Vigenere {
     {
     	code = code.toUpperCase();
         String sortie = new String("");
+        //entree = entree.replaceAll(" ", "");
         for (int i = 0; i < entree.length(); i++) {
             sortie = sortie.concat(c.coder(Character.toString(entree.charAt(i)), code.charAt(i%code.length())));
         }
@@ -27,17 +28,37 @@ public class Vigenere {
     {
     	code = code.toUpperCase();
         String sortie = new String("");
+        //entree = entree.replaceAll(" ", "");
         for (int i = 0; i < entree.length(); i++) {
             sortie = sortie.concat(c.deCoder(Character.toString(entree.charAt(i)), code.charAt(i%code.length())));
         }
         return sortie;
     }
     
-    public void attaqueBruteForce(String entree)
+    public String attaqueBruteForce(String entree, int longueur)
     {
-    	for (int i = 0; i < 20; i++) {
-			System.out.println(this.deCoder(entree, this.trouverCle(entree, i+1)));
+    	char cle[] = new char[longueur];
+    	String sortie = "";
+    	for (int i = 0; i < longueur; i++) {
+			cle[i] = 'A';
 		}
+    	while(true)
+    	{
+    		if(this.indiceCoincidence(this.coder(entree, cle))>=0.072 && this.indiceCoincidence(this.coder(entree, cle))<=0.082)
+			{
+    			for (int i = 0; i < cle.length; i++) {
+					sortie += String.valueOf(cle[i]);
+				}
+			}else if(cle[] == 'Z')
+			{
+				
+			}else
+			{
+				
+			}
+    	}
+    	
+    	
     }
     
     /*
