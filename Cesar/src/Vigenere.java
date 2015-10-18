@@ -37,28 +37,50 @@ public class Vigenere {
     
     public String attaqueBruteForce(String entree, int longueur)
     {
-    	char cle[] = new char[longueur];
+    	entree = entree.toUpperCase();
+    	char tabcle[] = new char[longueur];
     	String sortie = "";
     	for (int i = 0; i < longueur; i++) {
-			cle[i] = 'A';
+			tabcle[i] = 'A';
 		}
+    	String cle = "";
+    	int i=0;
     	while(true)
     	{
-    		if(this.indiceCoincidence(this.coder(entree, cle))>=0.072 && this.indiceCoincidence(this.coder(entree, cle))<=0.082)
+    		if(i%1000==0)
+    			System.out.println(i);
+    		i++;
+    		cle = new String(tabcle);
+    		if(cle == "ZZZZZZ")
+    			return "non trouvé";
+    		if(this.indiceCoincidence(coder(entree, cle))>=0.075 && this.indiceCoincidence(this.coder(entree,cle))<=0.079)
 			{
-    			for (int i = 0; i < cle.length; i++) {
-					sortie += String.valueOf(cle[i]);
-				}
-			}else if(cle[] == 'Z')
-			{
-				
-			}else
-			{
-				
+    			return this.coder(entree, cle);
+    			
 			}
+    		tabcle = this.decalerCle(tabcle);
+    		
     	}
     	
     	
+    }
+    
+    
+    private char[] decalerCle(char[] cle)
+    {
+    	boolean decale = false;
+    	cle[cle.length-1]=c.decaler(cle[cle.length-1], 1);
+    	if(cle[cle.length-1]=='A')
+    		decale=true;
+    	for (int i = cle.length-1; i > 0; i--) {
+			if(cle[i]=='A'&&decale==true)
+			{
+				cle[i-1] = c.decaler(cle[i-1], 1);
+			}
+			if(cle[i-1]!='A')
+				decale=false;
+		}
+    	return cle;
     }
     
     /*
