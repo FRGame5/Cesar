@@ -1,14 +1,16 @@
 import java.util.Arrays;
-
+import java.util.Scanner;
 
 public class Vigenere {
 	private Alphabet a;
     private Cesar c;
+    private Scanner scan;
 
     public Vigenere()
     {
         a = new Alphabet();
         c = new Cesar();
+        scan = new Scanner(System.in);
     }
     
     
@@ -135,7 +137,13 @@ public class Vigenere {
     	indiceSimilaire = this.indiceCoincidence(retour[0]);
     	for (int i = 0; i < retour.length; i++) {
 			if(this.indiceCoincidence(retour[i]) != indiceSimilaire){
-				return "Clée non trouvée... Sa longueur est de " + (i+1);
+				
+				System.out.println("Clée non trouvée... Sa longueur est de " + (i+1) + ".\nVoullez-vous lancer l'attaque à Force Brute ?\n(À titre d'information, ceci vouz ferrez patienter environs " + (Math.pow(i+1, 26)/12000) + " minutes.)\nSi vous souhaitez lancer l'attaque à Force Brute, tapez 1, sinon tapez 2");
+				int choix = scan.nextInt();
+				if (choix == 1){
+					this.attaqueBruteForce(entree, i+1);
+				}
+				
 			}
 			
 		}
