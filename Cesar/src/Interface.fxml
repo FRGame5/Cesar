@@ -118,8 +118,8 @@
                                                                 </VBox>
                                                                 <VBox spacing="10.0" HBox.hgrow="ALWAYS">
                                                                     <children>
-                                                                        <TextArea />
-                                                                        <TextArea />
+                                                                        <TextArea fx:id="chpSaisieDecoderCesarSansCle" />
+                                                                        <TextArea fx:id="chpRetourDecoderCesarSansCle" />
                                                                     </children>
                                                                     <HBox.margin>
                                                                         <Insets />
@@ -170,9 +170,9 @@
                                                                 </VBox>
                                                                 <VBox spacing="10.0" HBox.hgrow="ALWAYS">
                                                                     <children>
-                                                                        <TextArea />
-                                                                        <TextField />
-                                                                        <TextArea prefHeight="200.0" prefWidth="200.0" />
+                                                                        <TextArea fx:id="chpSaisieEncoderVigenere" />
+                                                                        <TextField fx:id="chpCleEncoderVigenere" />
+                                                                        <TextArea fx:id="chpRetourEncoderVigenere" />
                                                                     </children>
                                                                     <HBox.margin>
                                                                         <Insets />
@@ -211,9 +211,9 @@
                                                                 </VBox>
                                                                 <VBox spacing="10.0" HBox.hgrow="ALWAYS">
                                                                     <children>
-                                                                        <TextArea />
-                                                                        <TextField />
-                                                                        <TextArea />
+                                                                        <TextArea fx:id="chpSaisieDecoderVigenere" />
+                                                                        <TextField fx:id="chpCleDecoderVigenere" />
+                                                                        <TextArea fx:id="chpRetourDecoderVigenere" />
                                                                     </children>
                                                                     <HBox.margin>
                                                                         <Insets />
@@ -248,8 +248,8 @@
                                                                 </VBox>
                                                                 <VBox spacing="10.0" HBox.hgrow="ALWAYS">
                                                                     <children>
-                                                                        <TextArea fx:id="chpSaisieDecoderVigenere" />
-                                                                        <TextArea fx:id="chpRetourDecoderVigenere" />
+                                                                        <TextArea fx:id="chpSaisieDecoderVigenereSansCle" />
+                                                                        <TextArea fx:id="chpRetourDecoderVigenereSansCle" />
                                                                     </children>
                                                                     <HBox.margin>
                                                                         <Insets />

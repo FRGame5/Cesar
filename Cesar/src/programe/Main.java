@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+import javax.xml.soap.Text;
 import java.awt.*;
 
 
@@ -16,43 +17,53 @@ public class Main extends Application{
 
 	@FXML
 	Button EncoderCesar;
-
 	@FXML
 	Button DecoderCesar;
-
 	@FXML
 	Button DecoderCesarSansCle;
-
 	@FXML
 	Button EncoderVigenere;
-
 	@FXML
 	Button DecoderVigenere;
-
 	@FXML
 	Button DecoderVigenereSansCle;
-
 	@FXML
 	TextArea chpSaisieEncoderCesar; //chpSaisieEncoderCesar.getText();
-
 	@FXML
 	TextArea chpCleEncoderCesar;
-
 	@FXML
 	TextArea chpRetourEncoderCesar;
-
 	@FXML
 	TextArea chpSaisieDecoderCesar;
-
 	@FXML
 	TextArea chpCleDecoderCesar;
-
 	@FXML
 	TextArea chpRetourDecoderCesar;
+	@FXML
+	TextArea chpSaisieDecoderCesarSansCle;
+	@FXML
+	TextArea chpRetourDecoderCesarSansCle;
+	@FXML
+	TextArea chpSaisieEncoderVigenere;
+	@FXML
+	TextArea chpCleEncoderVigenere;
+	@FXML
+	TextArea chpRetourEncoderVigenere;
+	@FXML
+	TextArea chpSaisieDecoderVigenere;
+	@FXML
+	TextArea chpCleDecoderVigenere;
+	@FXML
+	TextArea chpRetourDecoderVigenere;
+	@FXML
+	TextArea chpSaisieDecoderVigenereSansCle;
+	@FXML
+	TextArea chpRetourDecoderVigenereSansCle;
 
 
 
 	public static void main(String[] args) {
+
 
 
 
