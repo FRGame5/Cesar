@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="programe.Main">
+    <children>
+        <Label text="Coder/ décoder César Vigenère" />
+        <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+            <tabs>
+                <Tab text="César">
+                    <content>
+                        <VBox>
+                            <children>
+                                <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                                    <tabs>
+                                        <Tab text="Encoder Avec Clé">
+                                            <content>
+                                                <VBox spacing="10.0">
+                                                    <children>
+                                                        <HBox>
+                                                            <children>
+                                                                <VBox alignment="CENTER_RIGHT" spacing="18.0">
+                                                                    <children>
+                                                                        <Label text="Message à Encoder :" />
+                                                                        <Label text="Clé :" />
+                                                                        <Label text="Message Encodé :" />
+                                                                    </children>
+                                                                    <HBox.margin>
+                                                                        <Insets right="20.0" />
+                                                                    </HBox.margin>
+                                                                </VBox>
+                                                                <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                                                                    <children>
+                                                                        <TextArea fx:id="chpSaisieEncoderCesar" />
+                                                                        <TextField fx:id="chpCleEncoderCesar" />
+                                                                        <TextArea fx:id="chpRetourEncoderCesar" />
+                                                                    </children>
+                                                                    <HBox.margin>
+                                                                        <Insets />
+                                                                    </HBox.margin>
+                                                                </VBox>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox>
+                                                            <children>
+                                                                <AnchorPane HBox.hgrow="ALWAYS" />
+                                                                <Button fx:id="EncoderCesar" minWidth="90.0" mnemonicParsing="false" onMouseClicked="#CoderCesar" text="Encoder" />
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                    <padding>
+                                                        <Insets left="20.0" right="20.0" top="30.0" />
+                                                    </padding>
+                                                </VBox>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Décoder Avec Clé">
+                                            <content>
+                                                <VBox spacing="10.0">
+                                                    <padding>
+                                                        <Insets left="20.0" right="20.0" top="30.0" />
+                                                    </padding>
+                                                    <children>
+                                                        <HBox>
+                                                            <children>
+                                                                <VBox alignment="CENTER_RIGHT" spacing="18.0">
+                                                                    <children>
+                                                                        <Label text="Message à Décoder :" />
+                                                                        <Label text="Clé :" />
+                                                                        <Label text="Message Décodé :" />
+                                                                    </children>
+                                                                    <HBox.margin>
+                                                                        <Insets right="20.0" />
+                                                                    </HBox.margin>
+                                                                </VBox>
+                                                                <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                                                                    <children>
+                                                                        <TextArea fx:id="chpSaisieDecoderCesar" />
+                                                                        <TextField fx:id="chpCleDecoderCesar" />
+                                                                        <TextArea fx:id="chpRetourDecoderCesar" />
+                                                                    </children>
+                                                                    <HBox.margin>
+                                                                        <Insets />
+                                                                    </HBox.margin>
+                                                                </VBox>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox>
+                                                            <children>
+                                                                <AnchorPane HBox.hgrow="ALWAYS" />
+                                                                <Button fx:id="DecoderCesar" minWidth="90.0" mnemonicParsing="false" onMouseClicked="#DecoderCesar" text="Décoder" />
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </VBox>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Décoder Sans la Clé">
+                                            <content>
+                                                <VBox spacing="10.0">
+                                                    <padding>
+                                                        <Insets left="20.0" right="20.0" top="30.0" />
+                                                    </padding>
+                                                    <children>
+                                                        <HBox>
+                                                            <children>
+                                                                <VBox alignment="CENTER_RIGHT" spacing="18.0">
+                                                                    <children>
+                                                                        <Label text="Message à Décoder :" />
+                                                                        <Label text="Message Décodé :" />
+                                                                    </children>
+                                                                    <HBox.margin>
+                                                                        <Insets right="20.0" />
+                                                                    </HBox.margin>
+                                                                </VBox>
+                                                                <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                                                                    <children>
+                                                                        <TextArea />
+                                                                        <TextArea />
+                                                                    </children>
+                                                                    <HBox.margin>
+                                                                        <Insets />
+                                                                    </HBox.margin>
+                                                                </VBox>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox>
+                                                            <children>
+                                                                <AnchorPane HBox.hgrow="ALWAYS" />
+                                                                <Button fx:id="DecoderCesarSansCle" minWidth="90.0" mnemonicParsing="false" onMouseClicked="#DecoderCesarSansCle" text="Décoder" />
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </VBox>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                            </children>
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="Vigenère">
+                    <content>
+                        <VBox>
+                            <children>
+                                <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                                    <tabs>
+                                        <Tab text="Encoder Avec Clé">
+                                            <content>
+                                                <VBox spacing="10.0">
+                                                    <padding>
+                                                        <Insets left="20.0" right="20.0" top="30.0" />
+                                                    </padding>
+                                                    <children>
+                                                        <HBox>
+                                                            <children>
+                                                                <VBox alignment="CENTER_RIGHT" spacing="18.0">
+                                                                    <children>
+                                                                        <Label text="Message à Encoder :" />
+                                                                        <Label text="Clé :" />
+                                                                        <Label text="Message Encodé :" />
+                                                                    </children>
+                                                                    <HBox.margin>
+                                                                        <Insets right="20.0" />
+                                                                    </HBox.margin>
+                                                                </VBox>
+                                                                <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                                                                    <children>
+                                                                        <TextArea />
+                                                                        <TextField />
+                                                                        <TextArea prefHeight="200.0" prefWidth="200.0" />
+                                                                    </children>
+                                                                    <HBox.margin>
+                                                                        <Insets />
+                                                                    </HBox.margin>
+                                                                </VBox>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox>
+                                                            <children>
+                                                                <AnchorPane HBox.hgrow="ALWAYS" />
+                                                                <Button fx:id="EncoderVigenere" minWidth="90.0" mnemonicParsing="false" onMouseClicked="#EncoderVigenere" text="Encoder" />
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </VBox>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Décoder Avec Clé">
+                                            <content>
+                                                <VBox spacing="10.0">
+                                                    <padding>
+                                                        <Insets left="20.0" right="20.0" top="30.0" />
+                                                    </padding>
+                                                    <children>
+                                                        <HBox>
+                                                            <children>
+                                                                <VBox alignment="CENTER_RIGHT" spacing="18.0">
+                                                                    <children>
+                                                                        <Label text="Message à Décoder :" />
+                                                                        <Label text="Clé :" />
+                                                                        <Label text="Message Décodé :" />
+                                                                    </children>
+                                                                    <HBox.margin>
+                                                                        <Insets right="20.0" />
+                                                                    </HBox.margin>
+                                                                </VBox>
+                                                                <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                                                                    <children>
+                                                                        <TextArea />
+                                                                        <TextField />
+                                                                        <TextArea />
+                                                                    </children>
+                                                                    <HBox.margin>
+                                                                        <Insets />
+                                                                    </HBox.margin>
+                                                                </VBox>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox>
+                                                            <children>
+                                                                <AnchorPane HBox.hgrow="ALWAYS" />
+                                                                <Button fx:id="DecoderVigenere" minWidth="90.0" mnemonicParsing="false" onMouseClicked="#DecoderVigenere" text="Décoder" />
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </VBox>
+                                            </content>
+                                        </Tab>
+                                        <Tab text="Décoder Sans la Clé">
+                                            <content>
+                                                <VBox spacing="10.0">
+                                                    <children>
+                                                        <HBox>
+                                                            <children>
+                                                                <VBox alignment="CENTER_RIGHT" spacing="18.0">
+                                                                    <children>
+                                                                        <Label text="Message à Encoder :" />
+                                                                        <Label text="Message Encodé :" />
+                                                                    </children>
+                                                                    <HBox.margin>
+                                                                        <Insets right="20.0" />
+                                                                    </HBox.margin>
+                                                                </VBox>
+                                                                <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                                                                    <children>
+                                                                        <TextArea fx:id="chpSaisieDecoderVigenere" />
+                                                                        <TextArea fx:id="chpRetourDecoderVigenere" />
+                                                                    </children>
+                                                                    <HBox.margin>
+                                                                        <Insets />
+                                                                    </HBox.margin>
+                                                                </VBox>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox>
+                                                            <children>
+                                                                <AnchorPane HBox.hgrow="ALWAYS" />
+                                                                <Button fx:id="DecoderVigenereSansCle" minWidth="90.0" mnemonicParsing="false" onMouseClicked="#DecoderVigenereSansCle" text="Décoder" />
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                    <padding>
+                                                        <Insets left="20.0" right="20.0" top="30.0" />
+                                                    </padding>
+                                                </VBox>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                            </children>
+                        </VBox>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+   <padding>
+      <Insets bottom="20.0" />
+   </padding>
+</VBox>
