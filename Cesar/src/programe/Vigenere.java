@@ -27,7 +27,7 @@ public class Vigenere {
         return sortie;
     }
 
-    public String deCoder(String entree, String code)
+    public String decoder(String entree, String code)
     {
     	code = code.toUpperCase();
         String sortie = new String("");

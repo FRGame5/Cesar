@@ -26,7 +26,7 @@ public class Cesar {
 		return sortie;
 	}
 
-	public String deCoder(String entree, char cle) {
+	public String decoder(String entree, char cle) {
 		String sortie = new String();
 		entree = entree.toUpperCase();
 		for (int i = 0; i < entree.length(); i++) {
