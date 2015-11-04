@@ -70,7 +70,7 @@ public class Cesar {
 	
 	public String decoderSansCle(String entree)
 	{
-		return this.deCoder(entree,this.trouverClee(entree));
+		return this.decoder(entree,this.trouverClee(entree));
 	}
 
 }

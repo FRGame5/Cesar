@@ -33,7 +33,7 @@ public class Vigenere {
         String sortie = new String("");
         //entree = entree.replaceAll(" ", "");
         for (int i = 0; i < entree.length(); i++) {
-            sortie = sortie.concat(c.deCoder(Character.toString(entree.charAt(i)), code.charAt(i%code.length())));
+            sortie = sortie.concat(c.decoder(Character.toString(entree.charAt(i)), code.charAt(i % code.length())));
         }
         return sortie;
     }
@@ -124,7 +124,7 @@ public class Vigenere {
     	//chaque case du tableau recoit comme si la longueur de la clee etait de longueur i+1
     	for (int i = 0; i < retour.length; i++) {
 			clee[i] = this.trouverCle(entree, i+1);
-			retour[i] = this.deCoder(entree, clee[i]);
+			retour[i] = this.decoder(entree, clee[i]);
 		}
     	//si une des case a pour indice de coincidence 0.778 +- 0.05 alors c'est le message decoder
     	for (int i = 0; i < retour.length; i++) {
@@ -138,8 +138,9 @@ public class Vigenere {
     	indiceSimilaire = this.indiceCoincidence(retour[0]);
     	for (int i = 0; i < retour.length; i++) {
 			if(this.indiceCoincidence(retour[i]) != indiceSimilaire){
-				
-				System.out.println("Clée non trouvée... Sa longueur est de " + (i+1) + ".\nVoullez-vous lancer l'attaque à Force Brute ?\n(À titre d'information, ceci vouz ferrez patienter environs " + (Math.pow(i+1, 26)/12000) + " minutes.)\nSi vous souhaitez lancer l'attaque à Force Brute, tapez 1, sinon tapez 2");
+
+				double minutes = Math.pow(26, i + 1) * 12000;
+				System.out.println("Clée non trouvée... Sa longueur est de " + (i+1) + ".\nVoullez-vous lancer l'attaque à Force Brute ?\n(À titre d'information, ceci vouz ferrez patienter environs " + minutes + " minutes.)\nSi vous souhaitez lancer l'attaque à Force Brute, tapez 1, sinon tapez 2");
 				int choix = scan.nextInt();
 				if (choix == 1){
 					this.attaqueBruteForce(entree, i+1);

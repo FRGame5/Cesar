@@ -5,7 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="programe.Main">
+<VBox prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="programe.Interface">
     <children>
         <Label text="Coder/ décoder César Vigenère" />
         <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
@@ -47,7 +47,7 @@
                                                         <HBox>
                                                             <children>
                                                                 <AnchorPane HBox.hgrow="ALWAYS" />
-                                                                <Button fx:id="EncoderCesar" minWidth="90.0" mnemonicParsing="false" onMouseClicked="#CoderCesar" text="Encoder" />
+                                                                <Button fx:id="EncoderCesar" minWidth="90.0" mnemonicParsing="false" onMouseClicked="#EncoderCesar" text="Encoder" />
                                                             </children>
                                                         </HBox>
                                                     </children>
